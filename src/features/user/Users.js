@@ -35,20 +35,18 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export function Users() {
-  //   const count = useSelector(selectCount);
   const users = useSelector(selectUsers);
   const error = useSelector(selectError);
   const dispatch = useDispatch();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
-  const [resetDefaultPwd, setResetDefaultPwd] = useState(1);
   const [formVisible, setFormVisible] = useState(false);
   const classes = useStyles();
 
   useEffect(() => {
     dispatch(fetchUserListAsync());
-  }, []);
+  });
   console.log("error- ", error);
   return (
     <Container maxWidth="lg">
@@ -85,9 +83,7 @@ export function Users() {
           />
           <Button
             onClick={() =>
-              dispatch(
-                createUserAsync({ username, password, email, resetDefaultPwd })
-              )
+              dispatch(createUserAsync({ username, password, email }))
             }
             variant="contained"
             color="primary"
@@ -125,16 +121,3 @@ export function Users() {
     </Container>
   );
 }
-
-/*
-
-      <div className={styles.row}>
-        <button
-          className={styles.button}
-          aria-label="Increment value"
-          onClick={() => dispatch(increment())}
-        >
-          +
-        </button>
-      </div>
-*/

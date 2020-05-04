@@ -1,0 +1,16 @@
+{
+  "login": {
+    "labels": {
+      "email": "Email Address",
+      "password": "Password",
+      "rememberme": "Remember me"
+    },
+    "buttons": {
+      "login": "Login"
+    },
+    "links": {
+      "forgotpassword": "Forgot password?",
+      "signup": "Don't have an account? Sign Up"
+    }
+  }
+}
