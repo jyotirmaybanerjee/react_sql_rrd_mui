@@ -55,7 +55,7 @@ export const Menu = () => {
           ))}
         </List>
       </Drawer>
-      <AppBar position="static">
+      <AppBar position="fixed">
         <Toolbar>
           <IconButton
             edge="start"

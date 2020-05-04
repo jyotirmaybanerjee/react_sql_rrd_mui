@@ -7,7 +7,6 @@ export class UserDAO {
     this.resetDefaultPwd = resetDefaultPwd;
   }
   getUsers() {
-    console.log("getUsers");
     return getRequestData("/api/users")
       .then((data) => {
         // console.log("data- ", data); // JSON data parsed by `response.json()` call

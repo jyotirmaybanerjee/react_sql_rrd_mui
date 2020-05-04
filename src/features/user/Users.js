@@ -12,7 +12,6 @@ import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-// import { Alert } from "components";
 import Alert from "@material-ui/lab/Alert";
 import { makeStyles } from "@material-ui/core/styles";
 import {
@@ -23,6 +22,9 @@ import {
 } from "./userSlice";
 
 const useStyles = makeStyles((theme) => ({
+  mainContaner: {
+    marginTop: "60px",
+  },
   formRoot: {
     "& .MuiTextField-root": {
       margin: theme.spacing(1),
@@ -46,10 +48,10 @@ export function Users() {
 
   useEffect(() => {
     dispatch(fetchUserListAsync());
-  });
+  }, []);
   console.log("error- ", error);
   return (
-    <Container maxWidth="lg">
+    <Container maxWidth="lg" className={classes.mainContaner}>
       <Fab
         onClick={() => setFormVisible(!formVisible)}
         color="primary"
